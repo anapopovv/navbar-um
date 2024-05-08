@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Poppins-Regular.otf') format(opentype);
+}
+
+main {
+    background-color: #f3f3f3;
+    height: 46vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabeçalho {
+    height: 60px;
+    display: flex;
+    padding: 0px 25px 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    font-family: poppins;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5553e3;
+}
+
+.nav-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    font-size: 15px;
+    font-weight: 100;
+    color: #5553e3;
+    transition: .5s;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 5px auto;
+    background-color: #5553E3;
+    transition: all .3s ease-in-out;
+}
+
+@media screen and (min-width: 381px) and (max-width: 400px) {
+    .nav-menu {
+        position: absolute;
+        left: -100%;
+        top: 60px;
+        height: 35%;
+        gap: 0px;
+        background-color: #5553e3;
+        text-align: center;
+        flex-direction: column;
+        z-index: 999;
+        width: 100%;
+        transition: .3s;
+        transform: translate(0%);
+    }
+
+    .nav-link {
+        color: #f3f3f3;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+
+    .hamburguer.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(48deg);
+    }
+
+    .hamburguer.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
